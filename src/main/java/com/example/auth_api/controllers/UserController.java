@@ -2,7 +2,6 @@ package com.example.auth_api.controllers;
 
 import com.example.auth_api.domain.user.User;
 import com.example.auth_api.dtos.GetLoggedUserResponseDTO;
-import com.example.auth_api.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

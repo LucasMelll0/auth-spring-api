@@ -4,12 +4,9 @@ import com.example.auth_api.dtos.LoginRequestDTO;
 import com.example.auth_api.dtos.LoginResponseDTO;
 import com.example.auth_api.dtos.RegisterRequestDTO;
 import com.example.auth_api.dtos.RegisterResponseDTO;
-import com.example.auth_api.infra.security.TokenService;
-import com.example.auth_api.repositories.UserRepository;
 import com.example.auth_api.services.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +30,5 @@ public class AuthController {
         RegisterResponseDTO response = authService.register(body);
         return ResponseEntity.ok(response);
     }
-
 
 }
