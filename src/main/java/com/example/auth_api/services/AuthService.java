@@ -30,7 +30,7 @@ public class AuthService {
         if (!passwordEncoder.matches(requestDTO.password(), user.getPassword())) {
             throw new PasswordNotMatchException();
         }
-        String token = this.tokenService.generateToken(user);
+        String token = this.tokenService.generateToken(user.getEmail());
         return new LoginResponseDTO(user.getName(), token);
     }
 
@@ -43,7 +43,7 @@ public class AuthService {
         newUser.setName(requestDTO.name());
         this.userRepository.save(newUser);
 
-        String token = this.tokenService.generateToken(newUser);
+        String token = this.tokenService.generateToken(newUser.getEmail());
         return new RegisterResponseDTO(requestDTO.name(), token);
     }
 
